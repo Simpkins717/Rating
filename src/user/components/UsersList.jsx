@@ -4,7 +4,7 @@ import Card from '../../shared/components/UIElements/Card';
 const UsersList = ({ items }) => {
   if (items.length === 0)
     return (
-      <div className='text-center'>
+      <div className='text-center '>
         <Card>
           <h2>No Items</h2>
         </Card>

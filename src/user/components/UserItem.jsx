@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 
 const UserItem = ({ image, name, id, placeCount }) => {
   return (
-    <li className='mt-28  pt-4'>
+    <li className='mt-20  pt-8'>
       <div className='flex justify-center '>
         <Link to={`/${id}/places`}>
-          <Card className='flex flex-wrap  w-64 rounded-md bg-black text-white hover:bg-cyan-500 hover:scale-110  shadow-md shadow-black '>
+          <Card classes='flex flex-wrap  w-64 rounded-md bg-black text-white hover:bg-cyan-500 hover:scale-110  shadow-md shadow-black '>
             <div className='flex p-2 gap-4 '>
               <Avatar
                 image={image}

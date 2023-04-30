@@ -2,14 +2,10 @@ import React, { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
-const Modal = ({ show, setShowMap }) => {
-  const [showModal, setShowModal] = useState(show);
+const Modal = ({ setShowMap, header, children }) => {
   return (
     <>
-      <div
-        onClick={() => setShowMap(false)}
-        className='fixed inset-0 bg-gray-400 bg-opacity-75 transition-opacity '
-      >
+      <div className='fixed inset-0 bg-gray-400 bg-opacity-75 transition-opacity'>
         <div className='fixed inset-0 z-10 overflow-y-auto'>
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -29,7 +25,8 @@ const Modal = ({ show, setShowMap }) => {
                 <button onClick={() => setShowMap(false)}>
                   <FaTimes className='h-8 w-8' />
                 </button>
-                <header></header>
+                <header>{header}</header>
+                {children}
               </div>
             </div>
           </motion.div>

@@ -9,17 +9,22 @@ const Button = ({
   disabled,
   onClick,
   type,
+  disabledClasses,
 }) => {
   if (href) {
     return (
-      <a className={classes} href=''>
+      <a className={disabled ? disabledClasses : classes} href=''>
         {children}
       </a>
     );
   }
   if (to) {
     return (
-      <Link className={classes} to={to} exact={exact}>
+      <Link
+        className={disabled ? disabledClasses : classes}
+        to={to}
+        exact={exact}
+      >
         {children}
       </Link>
     );
@@ -28,7 +33,7 @@ const Button = ({
     <button
       type={type}
       onClick={onClick}
-      className={classes}
+      className={disabled ? disabledClasses : classes}
       disabled={disabled}
     >
       {children}

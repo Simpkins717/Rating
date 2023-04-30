@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from '../../shared/components/UIElements/Card';
 import PlaceItem from './PlaceItem';
+import Button from '../../shared/components/FormElements/Button';
 
 const PlaceList = ({ items }) => {
   if (items.length === 0) {
@@ -8,7 +9,13 @@ const PlaceList = ({ items }) => {
       <div>
         <Card>
           <h2>No Places Found. Create One!</h2>
-          <button>Share Place</button>
+          <Button
+            classes='bg-red-500 font-semibold py-3 px-6 rounded-md mt-4 ml-4'
+            disabledClasses='bg-gray-300 text-gray-100 font-semibold py-3 px-6 rounded-md mt-4 ml-4'
+            to='/places/new'
+          >
+            Share Place
+          </Button>
         </Card>
       </div>
     );
