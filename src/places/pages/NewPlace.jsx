@@ -32,7 +32,7 @@ const NewPlace = () => {
 
   return (
     <form
-      className='pt-8 mt-28 rounded-sm p-8  bg-white w-7/12 mx-auto '
+      className='pt-8 mt-28 rounded-sm p-8  bg-white w-7/12 mx-auto shadow-md shadow-orange-200 '
       onSubmit={thingSubmitHandler}
     >
       <Input
@@ -75,13 +75,16 @@ const NewPlace = () => {
         inputClasses='bg-gray-200 pl-4 rounded-md ml-4 py-2 mr-4'
         onChange={inputHandler}
       />
-      <Button
-        type='submit'
-        disabled={!formState.isValid}
-        classes='bg-red-500 font-semibold py-3 px-6 rounded-md mt-4 ml-4'
-      >
-        Add Thing
-      </Button>
+      <div className='flex justify-center'>
+        <Button
+          type='submit'
+          disabled={!formState.isValid}
+          classes='bg-orange-400 font-semibold py-3 px-6 rounded-md mt-4 ml-4'
+          disabledClasses='bg-gray-300 text-gray-100 font-semibold py-3 px-6 rounded-md mt-4 ml-4'
+        >
+          Add Thing
+        </Button>
+      </div>
     </form>
   );
 };
